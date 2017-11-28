@@ -76,8 +76,6 @@ public class BlackjackLogs {
     /* Permita que el usuario juegue un juego de Blackjack, con la computadora como distribuidor.
     * @return true si el usuario gana el juego, falso si el usuario pierde.*/
     static boolean playBlackjack() throws IOException {
-        //boolean ver = true;
-//        try {
         File file = new File("logs.txt");
         FileWriter escribir = new FileWriter(file, true);
         String aux = "";
@@ -119,7 +117,6 @@ public class BlackjackLogs {
             System.out.println(aux);
             escribir.write(aux);
             for (int i = 0; i < manoUsuario.getRecuentoCarta(); i++) {
-                //System.out.println("      " + manoUsuario.getCarta(i));
                 aux = "      " + manoUsuario.getCarta(i);
                 System.out.println(aux);
                 escribir.write(aux);
@@ -151,8 +148,7 @@ public class BlackjackLogs {
                 // Si el usuario supera los 21, el usuario pierde.
                 Carta nuevaCarta = cubierta.tarjeta_oferta();
                 manoUsuario.agregarCarta(nuevaCarta);
-                aux = "\nEl usuario acierta"
-                        + "\nSu tarjeta es la " + nuevaCarta
+                aux = "\nEl usuario acierta" + "\nSu tarjeta es la " + nuevaCarta
                         + "\nSu total es ahora " + manoUsuario.getBlackjackValue();
                 System.out.println(aux);
                 escribir.write(aux);
@@ -165,6 +161,7 @@ public class BlackjackLogs {
                 }
             }
         }//fin del While
+        
         /* Si llegamos a este punto, el usuario tiene valor de 21 o menos. Ahora es
          la oportunidad del distribuidor para dibujar. El distribuidor roba cartas hasta que el crupier
          el total es> 16. Si el crupier supera los 21, el crupier pierde.*/

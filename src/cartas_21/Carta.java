@@ -5,27 +5,28 @@ package cartas_21;
  * @author DAVID
  */
 public class Carta {
-     public final static int SPADES = 0;   // Codes for the 4 suits, plus Joker.
-    public final static int HEARTS = 1;
-    public final static int DIAMONDS = 2;
+    // Constatntes son con mayusculas
+    public final static int ESPADAS = 0;   // Codes for the 4 suits, plus Joker.
+    public final static int COPAS = 1;
+    public final static int DIAMANTES = 2;
     public final static int CLUBS = 3;
     public final static int JOKER = 4;
-    public final static int ACE = 1;      // Codes for the non-numeric cards.
+    public final static int AS = 1;      // Codes for the non-numeric cards.
     public final static int JACK = 11;    //   Cards 2 through 10 have their 
-    public final static int QUEEN = 12;   //   numerical values for their codes.
-    public final static int KING = 13;
+    public final static int REINA = 12;   //   numerical values for their codes.
+    public final static int REY = 13;
 
     /**
-     * This card's suit, one of the constants SPADES, HEARTS, DIAMONDS,
-     * CLUBS, or JOKER.  The suit cannot be changed after the card is
+     * This card's suit, one of the constants ESPADAS, COPAS, DIAMANTES,
+ CLUBS, or JOKER.  The suit cannot be changed after the card is
      * constructed.
      */
     private final int suit; 
     /**
      * The card's value.  For a normal card, this is one of the values
-     * 1 through 13, with 1 representing ACE.  For a JOKER, the value
-     * can be anything.  The value cannot be changed after the card
-     * is constructed.
+ 1 through 13, with 1 representing AS.  For a JOKER, the value
+ can be anything.  The value cannot be changed after the card
+ is constructed.
      */
     private final int value;
     /**
@@ -38,17 +39,16 @@ public class Carta {
     }
     /**
      * Creates a card with a specified suit and value.
-     * @param theValue the value of the new card.  For a regular card (non-joker),
-     * the value must be in the range 1 through 13, with 1 representing an Ace.
-     * You can use the constants Card.ACE, Card.JACK, Card.QUEEN, and Card.KING.  
-     * For a Joker, the value can be anything.
+     * @param theValue the value of the new card.  For a regular card (non-joker),the value must be in the range 1 through 13, with 1 representing an Ace.
+        You can use the constants Card.AS, Card.JACK, Card.REINA, and Card.REY.  
+        For a Joker, the value can be anything.
      * @param theSuit the suit of the new card.  This must be one of the values
-     * Card.SPADES, Card.HEARTS, Card.DIAMONDS, Card.CLUBS, or Card.JOKER.
+        Card.ESPADAS, Card.COPAS, Card.DIAMANTES, Card.CLUBS, or Card.JOKER.
      * @throws IllegalArgumentException if the parameter values are not in the
      * permissible ranges
      */
     public Carta(int theValue, int theSuit) {
-        if (theSuit != SPADES && theSuit != HEARTS && theSuit != DIAMONDS && 
+        if (theSuit != ESPADAS && theSuit != COPAS && theSuit != DIAMANTES && 
                 theSuit != CLUBS && theSuit != JOKER)
             throw new IllegalArgumentException("Illegal playing card suit");
         if (theSuit != JOKER && (theValue < 1 || theValue > 13))
@@ -79,9 +79,9 @@ public class Carta {
      */
     public String getSuitAsString() {
         switch ( suit ) {
-        case SPADES:   return "Spades";
-        case HEARTS:   return "Hearts";
-        case DIAMONDS: return "Diamonds";
+        case ESPADAS:   return "Spades";
+        case COPAS:   return "Hearts";
+        case DIAMANTES: return "Diamonds";
         case CLUBS:    return "Clubs";
         default:       return "Joker";
         }

@@ -31,15 +31,6 @@ public class Cubierta {
     public Cubierta() {
         this(false);  // Just call the other constructor in this class.
     }
-    /**
-     * Constructs a poker deck of playing cards, The deck contains
-     * the usual 52 cards and can optionally contain two Jokers
-     * in addition, for a total of 54 cards.   Initially the cards
-     * are in a sorted order.  The shuffle() method can be called to
-     * randomize the order.
-     * @param includeJokers if true, two Jokers are included in the deck; if false,
-     * there are no Jokers in the deck.
-     */
     public Cubierta(boolean includeJokers) {
         if (includeJokers)
             cubierta = new Carta[54];
